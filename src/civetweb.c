@@ -3986,6 +3986,7 @@ push(struct mg_context *ctx,
 	do {
 
 #ifndef NO_SSL
+            (void)ssl;
 #endif
 		    if (fp != NULL) {
 			n = (int)fwrite(buf, 1, (size_t)len, fp);
@@ -6084,6 +6085,7 @@ connect_socket(struct mg_context *ctx /* may be NULL */,
 	}
 
 #if !defined(NO_SSL)
+	(void)use_ssl;
 #else
 	(void)use_ssl;
 #endif
